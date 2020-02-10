@@ -1,0 +1,83 @@
+<h3>WELCOME</h3>
+
+    <div class="my-container">
+        <ng-template #customLoadingTemplate>
+        </ng-template>
+     
+        <ngx-loading [show]="loading" [config]="{ backdropBackgroundColour: 'rgba(169,169,169,0.3)', backdropBorderRadius: '10px',
+        primaryColour: 'black', secondaryColour: 'gray', tertiaryColour: '#ffffff'  }" [template]="customLoadingTemplate"></ngx-loading>
+    </div>
+
+
+<div class="container">
+    <button id="b1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">ADD USER</button>
+        <table class="table table-striped">
+          <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Update</th>
+                <th>Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let users of dataShow;  let i = index">
+              <td>{{ users.name }}</td>
+              <td>{{ users.mobile }}</td>
+              <td>{{ users.email }}</td>
+              <td>{{ users.password }}</td>
+              <td><button class="btn btn-primary" title="EDIT" value={{users._id}} (click)="up($event.target.value)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+              <td><button class="btn btn-danger" title="DELETE" value={{users._id}} (click)="del($event.target.value,i)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+</div>
+
+
+<div class="container">
+    
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        
+        <div class="modal-content">
+          
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+          <div class="modal-body">
+<form [formGroup]= "myReactiveFormAU" (ngSubmit) = "onSubmit()">
+    <br>
+        
+            <div class="form-group">
+            <input class="form-control" type="text" formControlName="name" placeholder="Name">
+            <small *ngIf="!myReactiveFormAU.get('name').valid && myReactiveFormAU.get('name').touched" class="text-danger">Please Enter Valid User Name</small>
+        </div>
+    <div class="form-group">
+            <input class="form-control" type="text" formControlName="number1" placeholder="Mobile Number">
+            <small *ngIf="!myReactiveFormAU.get('number1').valid && myReactiveFormAU.get('number1').touched" class="text-danger">Please Enter Valid Mobile Number</small>
+      </div>
+    <div class="form-group">
+            <input class="form-control" type="email" formControlName="email" placeholder="Email">
+            <small *ngIf="!myReactiveFormAU.get('email').valid && myReactiveFormAU.get('email').touched" class="text-danger">Please Enter Valid Email</small>
+        </div>
+    <div class="form-group">
+            <input class="form-control" type="password" formControlName="password" placeholder="Password">
+             <small *ngIf="!myReactiveFormAU.get('password').valid && myReactiveFormAU.get('password').touched" class="text-danger">Please Enter Valid Password</small>
+            </div>
+    <div class="form-group">    
+            <input class="form-control" type="password" formControlName="cpassword" placeholder="Confirm Password">
+            <div *ngIf="f.cpassword.errors">
+            <small *ngIf="f.cpassword.errors.required && f.cpassword.touched" class="text-danger">Confirm Password Field Can not be Empty</small>
+            <small *ngIf="f.cpassword.errors.mustMatch" class="text-danger">Confirm Password Does Not Match</small>
+            </div>
+        </div>     
+        <button type="submit" class="btn btn-primary" [disabled]="!myReactiveFormAU.valid">ADD USER</button><br>
+        </form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    </div>

@@ -1,0 +1,34 @@
+<html>
+<body>
+        <div class="container">
+  <form #myformS = "ngForm" (ngSubmit) = "onSubmit(myformS)">
+
+      <!-- <h4><b>S</b>IGN <b>I</b>N</h4> --><br>
+        <div class="form-group">
+        <input class="form-control" type="text" name="name" placeholder="Name" ngModel required #name="ngModel">
+        <small *ngIf="!name.valid && name.touched" class="text-danger">Please Enter Valid UserName</small>    
+    </div>
+<div class="form-group">
+        <input class="form-control" type="number" name="number1" placeholder="Mobile Number" ngModel required #number="ngModel">
+        <small *ngIf="!number.valid && number.touched" class="text-danger">Please Enter Valid Number</small>   
+    </div>
+<div class="form-group">
+        <input class="form-control" type="email" name="email" placeholder="Email" ngModel required email #email="ngModel">
+        <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+    </div>
+<div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Password" ngModel required #password="ngModel">
+        <small *ngIf="!password.valid && password.touched" class="text-danger">Please Enter Valid Password</small>    
+    </div>
+<div class="form-group">    
+        <input class="form-control" type="password" name="cpassword" placeholder="Confirm Password" ngModel required #cpassword="ngModel">
+        <small *ngIf="!cpassword.valid && cpassword.touched" class="text-danger">Confirm Password Does Not Match</small>   
+    </div>     
+    <button type="submit" class="btn btn-primary" [disabled]="!myformS.valid">SIGN UP</button>
+    <!-- <button type="submit" class="btn btn-primary" routerLink='/home'>SIGN UP</button> -->
+    </form>
+    <br>
+    Already have an account? <a routerLink='/login'>LOG IN</a>
+    </div>
+</body>
+</html>

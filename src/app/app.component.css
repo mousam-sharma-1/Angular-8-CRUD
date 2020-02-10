@@ -1,0 +1,20 @@
+.box{
+    margin: 0 5%;
+    padding:1%;
+    height: 400px;
+    width: 450px;
+}
+.btn1{
+    margin-left: 5%;
+    margin-top: 3%;
+}
+.btn2{
+    margin-left: 1%;
+    margin-top: 3%;
+}
+/* body{
+    background-image: url("https://image.freepik.com/free-vector/speed-motion-futuristic-blue-background_23-2148400715.jpg");
+} */
+img{
+    cursor: pointer;
+}

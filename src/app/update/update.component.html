@@ -1,0 +1,36 @@
+<html>
+<body>
+        <div class="container">
+  <form [formGroup]= "myReactiveFormUP" (ngSubmit) = "onSubmit()">
+<br>
+      <h4><b>U</b>PDATE</h4>
+        <div class="form-group">
+        <input class="form-control" type="text" formControlName="name" placeholder="Name">
+        <small *ngIf="!myReactiveFormUP.get('name').valid && myReactiveFormUP.get('name').touched" class="text-danger">Please Enter Valid User Name</small>
+    </div>
+<div class="form-group">
+        <input class="form-control" type="text" formControlName="number1" placeholder="Mobile Number">
+        <small *ngIf="!myReactiveFormUP.get('number1').valid && myReactiveFormUP.get('number1').touched" class="text-danger">Please Enter Valid Mobile Number</small>
+        <!-- <small *ngIf="myReactiveForm.get('number1').errors.pattern && myReactiveForm.get('number1').touched" class="text-danger">Mobile Number Should be of 10 Digits</small> -->
+    </div>
+<div class="form-group">
+        <input class="form-control" type="email" formControlName="email" placeholder="Email">
+        <small *ngIf="!myReactiveFormUP.get('email').valid && myReactiveFormUP.get('email').touched" class="text-danger">Please Enter Valid Email</small>
+    </div>
+<div class="form-group">
+        <input class="form-control" type="password" formControlName="password" placeholder="Password">
+         <small *ngIf="!myReactiveFormUP.get('password').valid && myReactiveFormUP.get('password').touched" class="text-danger">Please Enter Valid Password</small>
+        </div>
+<!-- <div class="form-group">    
+        <input class="form-control" type="password" formControlName="cpassword" placeholder="Confirm Password">
+        <div *ngIf="f.cpassword.errors">
+        <small *ngIf="f.cpassword.errors.required && f.cpassword.touched" class="text-danger">Confirm Password Field Can not be Empty</small>
+        <small *ngIf="f.cpassword.errors.mustMatch" class="text-danger">Confirm Password Does Not Match</small>
+        </div>
+    </div> -->
+    <button type="submit" class="btn btn-primary" [disabled]="!myReactiveFormUP.valid">UPDATE</button>
+    </form>
+  
+    </div>
+</body>
+</html>

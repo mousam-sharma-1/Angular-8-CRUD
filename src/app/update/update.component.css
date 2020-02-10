@@ -1,0 +1,25 @@
+.container{
+    text-align: center;
+    width: 50%;
+    margin-top: 3%;
+    }
+    h1 {
+        color: black;
+    }
+    h4{
+        text-align: left;
+        margin-bottom:2%;
+        color: rgb(95, 54, 243);
+        /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    b{
+        color: #4F34B3;
+        font-size: 30px;
+    }
+    input.ng-invalid.ng-touched{
+        border: 1px solid rgba(255, 0, 0, 0.726);
+        box-shadow: 0 0 5px inset rgba(255, 0, 0, 0.548);
+    }
+    
+      

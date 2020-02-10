@@ -1,0 +1,23 @@
+<html>
+<body>
+        <div class="container">
+  <form [formGroup]= "myReactiveFormL" (ngSubmit) = "onSubmit(myformL)">
+<br>
+      <h4><b>L</b>OG <b>I</b>N</h4>
+
+<div class="form-group">
+        <input class="form-control" type="email" formControlName="email" placeholder="Email">
+        <small *ngIf="!myReactiveFormL.get('email').valid && myReactiveFormL.get('email').touched" class="text-danger">Please Enter Valid Email</small>
+    </div>
+<div class="form-group">
+        <input class="form-control" type="password" formControlName="password" placeholder="Password">
+        <small *ngIf="!myReactiveFormL.get('password').valid && myReactiveFormL.get('password').touched" class="text-danger">Please Enter Valid Password</small>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!myReactiveFormL.valid">LOG IN</button>
+    <!-- <button type="submit" class="btn btn-success" routerLink='/home'>LOG IN</button> -->
+    </form>
+    <br>
+   New Here? <a routerLink='/signup'>SIGN UP</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<body>
+        <div class="container">
+  <form #myformL = "ngForm" (ngSubmit) = "onSubmit(myformL)">
+<br>
+<div class="form-group">
+        <input class="form-control" type="email" name="email" placeholder="Email" ngModel required email #email="ngModel">
+        <small *ngIf="!email.valid && email.touched" class="text-danger">Please Enter Valid Email</small>
+    </div>
+<div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Password" ngModel required #password="ngModel">
+        <small *ngIf="!password.valid && password.touched" class="text-danger">Please Enter Valid Password</small>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!myformL.valid">LOG IN</button>
+    <!-- <button type="submit" class="btn btn-success" routerLink='/home'>LOG IN</button> -->
+    </form>
+    <br>
+   New Here? <a routerLink='/'>SIGN UP</a>
+    </div>
+</body>
+</html>

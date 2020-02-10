@@ -1,0 +1,13 @@
+h3{
+    margin: 3% 3%;
+}
+#b1{
+   position: absolute;
+  top:12%;
+  left:85%;
+}
+.close{
+ margin-left:85%;
+ margin-top: 3%;
+  /* margin: 1px; */
+}
